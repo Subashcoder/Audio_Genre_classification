@@ -2,7 +2,7 @@
 1.Fork this repository.
 
  ```console
-git clone [https://github.com/MelihGulum/Music-Genre-Classification.git](https://github.com/Subashcoder/Audio_Genre_classification.git)
+git clone https://github.com/Subashcoder/Audio_Genre_classification.git
 ```
 
 2.Load the dependencies of the project
