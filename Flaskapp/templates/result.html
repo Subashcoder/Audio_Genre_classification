@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>🎵 Music Genre Prediction 🎶</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <h2>Prediction Result</h2>
+            <p>The predicted genre is: <strong>{{ genre }}</strong></p>
+
+            <h3>Uploaded Audio:</h3>
+            <!-- Audio player to listen to the uploaded file -->
+            <audio controls>
+                <source src="{{ url_for('static', filename='uploads/' + filename) }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+
+            <a href="/" style="margin-top: 20px; display: inline-block;">Predict Another File</a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Music Genre Predictor. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

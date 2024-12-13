@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Genre Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <h1>🎵 Music Genre Prediction 🎶</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <h2>Upload Your Audio File</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <label for="audio_file">Select an audio file (WAV format only):</label>
+                <input type="file" name="audio_file" id="audio_file" accept=".wav" required onchange="previewAudio(event)">
+                
+                <!-- Audio Preview Section -->
+                <div id="preview" style="margin-top: 20px; display: none;">
+                    <h3>Audio Preview:</h3>
+                    <audio id="audio_player" controls>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <button type="submit" style="margin-top: 20px;">Predict Genre</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Music Genre Predictor. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to preview the uploaded audio file
+        function previewAudio(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const audioPlayer = document.getElementById('audio_player');
+                const previewDiv = document.getElementById('preview');
+                
+                // Create an object URL for the audio file
+                const fileURL = URL.createObjectURL(file);
+                audioPlayer.src = fileURL;
+
+                // Show the preview section
+                previewDiv.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

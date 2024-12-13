@@ -1,0 +1,6 @@
+Music_classification
+Data/*
+extracted_features.csv
+uploads
+flask-app.pem
+/Music_classification/*
